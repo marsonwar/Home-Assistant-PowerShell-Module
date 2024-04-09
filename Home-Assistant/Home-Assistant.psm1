@@ -16,14 +16,14 @@
 Function New-HomeAssistantSession
 {
     Param(
-    [Parameter(Mandatory=$true)][string]$ip,
-    [Parameter(Mandatory=$true)][string]$port,
-    [Parameter(Mandatory=$true)][string]$token
+      [Parameter(Mandatory=$true)][string]$ip,
+      [Parameter(Mandatory=$true)][string]$port,
+      [Parameter(Mandatory=$true)][string]$token
     )
 
     $global:ha_api_headers = @{Authorization = "Bearer "+$token}
-    $global:ha_api_url = "http://"+"$ip"+":"+"$port"+"/api/"
-
+    $global:ha_api_url = "https://"+"$ip"+":"+"$port"+"/api/"
+    
     try
     {
         Write-Host "Testing connection... " -ForegroundColor Yellow -NoNewline
